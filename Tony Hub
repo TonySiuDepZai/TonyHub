@@ -1,0 +1,79 @@
+repeat wait() until game:IsLoaded()
+_G.Settings = {
+    ["Join Team"] = "Pirate", -- "Pirate","Marine"
+    ["AutoFarm"] = true,
+    ["DoubleQuest"] = true,
+    ["SkipLevelFarm"] = true,
+    ["AutoFarmLevelBone"] = true,
+    ["SelectWeapon"] = "Melee",
+    ["SetSpawnPoint"] = true,
+    ["IgnoreHop"] = true,
+    ["FastAttack"] = true,
+    ["Secret"] = true,
+    ["TradeBone"] = true,
+    ["StatKaitun"] = true,
+    ["LevelRedeemCode"] = 1100,
+    ["AutoRedeemCode"] = true,
+    ["AutoStoreFruit"] = true,
+    ["FPSLock"] = 30,
+    ["LockFPS"] = true,
+    ["BoostFPS"] = true,
+    ["WhiteScreen"] = true,
+    ["HideUi"] = true,
+    ["AutoHopToLower"] = false,
+    ["HopWhen"] = 7
+}
+
+_G.FightingStyle = {
+    ["AutoSuperhuman"] = true,
+    ["AutoDeathStep"] = true,
+    ["AutoSharkmanKarate"] = true,
+    ["AutoElectricClaw"] = true,
+    ["AutoDragonTalon"] = true
+}
+
+_G.Fruit = {
+    ["AutoRandomFruit"] = true,
+    ["GrabFruit"] = true,
+    ["AutoStoreFruit"] = true,
+    ["SelectEatFruit"] = "Dark-Dark", --"Bomb-Bomb","Spike-Spike","Chop-Chop","Spring-Spring","Kilo-Kilo","Spin-Spin","Bird: Falcon","Smoke-Smoke","Flame-Flame","Ice-Ice","Sand-Sand","Dark-Dark","Revive-Revive","Diamond-Diamond","Light-Light","Love-Love","Rubber-Rubber","Barrier-Barrier","Magma-Magma","Door-Door","Quake-Quake","Human-Human: Buddha","String-String","Bird-Bird: Phoenix","Rumble-Rumble","Paw-Paw","Gravity-Gravity","Dough-Dough","Shadow-Shadow","Venom-Venom","Control-Control","Soul-Soul","Dragon-Dragon"
+    ["AutoEatFruit"] = true,
+    ["AutoAwakeFruit"] = true
+}
+
+_G.Webhook = {
+    ["WebHookLink"] = "",
+    ["SendWebHookLevel"] = 2300,
+    ["SendWebHookPing"] = false,
+    ["SendWebHook"] = false,
+    ["BaseSheetLink"] = "",
+    ["SendBaseSheetLevel"] = 2300,
+    ["SendBaseSheet"] = false
+}
+
+if (game.PlaceId == 2753915549) then
+    _G.Item = {
+        ["AutoSaber"] = true,
+        ["AutoPole"] = true
+    }
+elseif (game.PlaceId == 4442272183) then
+    _G.Item = {
+        ["AutoRengoku"] = true,
+        ["AutoMidnightBlade"] = true,
+		["AutoGhoulMask"] = true,
+        ["AutoLegendarySword"] = true
+    }
+elseif game.PlaceId == 7449423635 then
+    _G.Item = {
+        ["AutoBuddySword"] = true,
+        ["AutoTwinHook"] = true,
+        ["AutoSerpentBow"] = true,
+        ["AutoCavender"] = true,
+        ["AutoYama"] = true,
+        ["AutoTushita"] = true,
+        ["AutoHallowScythe"] = true,
+        ["AutoKillCakePrince"] = true,
+        ["AutoEliteHunter"] = true
+    }
+end
+Local window = Library.CreateLib("Tony HUB","Ocean")
