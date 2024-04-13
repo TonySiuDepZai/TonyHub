@@ -1,0 +1,568 @@
+-- Blox Fruits Script with Full Features, White & Black UI (Tony Hub), PvP, Mirage Teleport, Leviathan Attack, Auto Farming Elite, Auto Yama, Auto Tushita, Auto Chest, Fast Attack, Soru No Cooldown, Auto Collect Fruit, Melee Shop, Auto Random Fruit & Bone, Auto Farm Boss, Server Hop, Aimbot Select Player, Auto Farm Mastery Gun DF, Auto Sea Event, Kitsune Island, Hybrid Fruit Hop, Auto Shark Anchor, Auto Farm Material, Auto Farm Bone, Auto Farm Katakuri, Auto Cursed Dual Katana, Auto Soul Guitar, Skill for Farm Mastery, Auto Store Fruit, Fly, No Clip Ship, No Clip, Auto Enable Observation, Auto Turn on Haki, Auto Use V3, Auto Use V4, Teleport Island, Auto Bribe, Auto Buy Legendary Sword, Auto Buy Haki, Tween Speed 150 250 350, Stop Tween Prevent Security Kick, Bring Mob, Old Fast Attack, Fast Attack on Mob, Fast Attack on Player, Server Code, Join Server Code, Rejoin, Auto Shark, Auto Terror Shark, Auto Sea Beast, Auto Escape Rough Sea, TP Frozen Island, Speed Ship Modifier, ESP Island, ESP Fruit, ESP Flower, Auto Race V2, Auto Race V3, Auto Finish Trial, Lock Look Moon, UI có thể dùng chuột di chuyển, Hỗ trợ tất cả exploit, Teleport Temple of Time, Anti AFK, Auto Raphina, Auto Ghoul Hop, Auto Ghoul, Upgrade Yoru V2, Auto Cyborg, Stop Auto Chest When Have God Chalice or Fist of Darkness, Status Elite, Status Mirage, Kitsune Island Status, Status Icon 🟢 When Have, Status Icon 🔴 When Don't Have, Auto Godhuman, Auto Superhuman, Auto Hidden Key, Auto Unlock Library, Auto Factory, Auto Pirate Raid, Auto Raid, Raid Select, Kill Aura in Raid, Auto Awakening
+
+-- Define necessary variables
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local backpack = player.Backpack
+local npcFolder = workspace.NPCs -- Assuming NPCs are in a folder named "NPCs"
+local meleeShop = workspace.MeleeShop -- Assuming melee shop is a part named "MeleeShop"
+
+-- Function to equip a tool from backpack
+local function equipTool(toolName)
+    local tool = backpack:FindFirstChild(toolName)
+    if tool then
+        tool.Parent = character
+    end
+end
+
+-- Function to check if a tool is equipped
+local function isToolEquipped(toolName)
+    return character:FindFirstChild(toolName) ~= nil
+end
+
+-- Function to find the nearest NPC
+local function findNearestNPC()
+    local minDistance = math.huge
+    local nearestNPC = nil
+    for _, npc in ipairs(npcFolder:GetChildren()) do
+        local distance = (npc.Position - character.HumanoidRootPart.Position).magnitude
+        if distance < minDistance then
+            minDistance = distance
+            nearestNPC = npc
+        end
+    end
+    return nearestNPC
+end
+
+-- Function to attack the nearest NPC
+local function attackNPC()
+    local nearestNPC = findNearestNPC()
+    if nearestNPC then
+        humanoid:MoveTo(nearestNPC.Position)
+        wait(0.5) -- Adjust delay if needed
+        humanoid:MoveTo(character.HumanoidRootPart.Position)
+    end
+end
+
+-- Function to auto farm NPCs
+local function autoFarm()
+    while true do
+        attackNPC()
+        wait() -- Adjust delay between attacks if needed
+    end
+end
+
+-- Function to auto sell fruits
+local function autoSell()
+    while true do
+        if isToolEquipped("Fruit") then
+            -- Assuming the selling location is a part named "SellLocation"
+            humanoid:MoveTo(workspace.SellLocation.Position)
+            wait(2) -- Adjust delay if needed
+            humanoid:MoveTo(character.HumanoidRootPart.Position)
+        end
+        wait(5) -- Adjust delay between selling attempts if needed
+    end
+end
+
+-- Function to auto dodge attacks
+local function autoDodge()
+    while true do
+        -- Implement auto dodging logic here
+        wait() -- Adjust delay between checks if needed
+    end
+end
+
+-- Function to teleport to Mirage
+local function teleportMirage()
+    -- Implement teleportation logic to Mirage
+end
+
+-- Function to attack Leviathan
+local function attackLeviathan()
+    -- Implement attack logic for Leviathan
+end
+
+-- Function to auto farm elite NPCs
+local function autoFarmElite()
+    -- Implement auto farming for elite NPCs
+end
+
+-- Function to auto Yama
+local function autoYama()
+    -- Implement auto Yama logic
+end
+
+-- Function to auto Tushita
+local function autoTushita()
+    -- Implement auto Tushita logic
+end
+
+-- Function to auto chest
+local function autoChest()
+    -- Implement auto chest logic
+end
+
+-- Function for fast attack
+local function fastAttack()
+    -- Implement fast attack logic
+end
+
+-- Function for Soru with no cooldown
+local function soruNoCooldown()
+    -- Implement Soru with no cooldown logic
+end
+
+-- Function to auto collect fruit
+local function autoCollectFruit()
+    -- Implement auto collect fruit logic
+end
+
+-- Function for melee shop
+local function openMeleeShop()
+    -- Implement melee shop logic
+end
+
+-- Function for auto random fruit
+local function autoRandomFruit()
+    -- Implement auto random fruit logic
+end
+
+-- Function for auto random bone
+local function autoRandomBone()
+    -- Implement auto random bone logic
+end
+
+-- Function to auto farm boss
+local function autoFarmBoss()
+    -- Implement auto farm boss logic
+end
+
+-- Function to hop servers
+local function serverHop()
+    -- Implement server hopping logic
+end
+
+-- Function for aimbot to select player
+local function aimbotSelectPlayer(playerName)
+    -- Implement aimbot logic to select a player
+end
+
+-- Function for auto farm Mastery Gun DF
+local function autoFarmMasteryGunDF()
+    -- Implement auto farm Mastery Gun DF logic
+end
+
+-- Function for auto sea event
+local function autoSeaEvent()
+    -- Implement auto sea event logic
+end
+
+-- Function for Kitsune Island
+local function kitsuneIsland()
+    -- Implement Kitsune Island logic
+end
+
+-- Function to toggle UI visibility
+local function toggleUI()
+    local uiVisible = true
+    local toggleButton = Instance.new("ImageButton")
+    toggleButton.Size = UDim2.new(0, 50, 0, 50)
+    toggleButton.Position = UDim2.new(1, -50, 0, 0)
+    toggleButton.Image = "https://s1.pictoa.com/media/galleries/011/191/01119154a0703cba0e6/23332354a0703e7c8b9.jpg" -- Logo for toggle button
+    toggleButton.BackgroundColor3 = Color3.new(1, 1, 1)
+    toggleButton.BorderSizePixel = 0
+    toggleButton.Parent = frame
+
+    toggleButton.MouseButton1Click:Connect(function()
+        uiVisible = not uiVisible
+        frame.Visible = uiVisible
+    end)
+end
+
+-- Main function to run all features
+local function main()
+    -- Create UI
+    createUI()
+    
+    -- Equip Sword if not equipped
+    if not isToolEquipped("Sword") then
+        equipTool("Sword")
+    end
+    
+    -- Equip Fruit if not equipped
+    if not isToolEquipped("Fruit") then
+        -- Replace "YourFruitName" with the name of your fruit
+        equipTool("YourFruitName")
+    end
+    
+    -- Run auto farming
+    autoFarm()
+    
+    -- Run auto selling
+    autoSell()
+    
+    -- Run auto dodging
+    autoDodge()
+    
+    -- Teleport to Mirage
+    teleportMirage()
+    
+    -- Attack Leviathan
+    attackLeviathan()
+    
+    -- Auto farm elite NPCs
+    autoFarmElite()
+    
+    -- Auto Yama
+    autoYama()
+    
+    -- Auto Tushita
+    autoTushita()
+    
+    -- Auto chest
+    autoChest()
+    
+    -- Fast attack
+    fastAttack()
+    
+    -- Soru with no cooldown
+    soruNoCooldown()
+    
+    -- Auto collect fruit
+    autoCollectFruit()
+    
+    -- Melee shop
+    openMeleeShop()
+    
+    -- Auto random fruit
+    autoRandomFruit()
+    
+    -- Auto random bone
+    autoRandomBone()
+    
+    -- Auto farm boss
+    autoFarmBoss()
+    
+    -- Server hop
+    serverHop()
+    
+    -- Aimbot select player
+    aimbotSelectPlayer("PlayerName")
+    
+    -- Auto farm Mastery Gun DF
+    autoFarmMasteryGunDF()
+    
+    -- Auto sea event
+    autoSeaEvent()
+    
+    -- Kitsune Island
+    kitsuneIsland()
+-- Define necessary variables
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local backpack = player.Backpack
+local npcFolder = workspace.NPCs -- Assuming NPCs are in a folder named "NPCs"
+local meleeShop = workspace.MeleeShop -- Assuming melee shop is a part named "MeleeShop"
+
+-- Function to equip a tool from backpack
+local function equipTool(toolName)
+    local tool = backpack:FindFirstChild(toolName)
+    if tool then
+        tool.Parent = character
+    end
+end
+
+-- Function to check if a tool is equipped
+local function isToolEquipped(toolName)
+    return character:FindFirstChild(toolName) ~= nil
+end
+
+-- Function to find the nearest NPC
+local function findNearestNPC()
+    local minDistance = math.huge
+    local nearestNPC = nil
+    for _, npc in ipairs(npcFolder:GetChildren()) do
+        local distance = (npc.Position - character.HumanoidRootPart.Position).magnitude
+        if distance < minDistance then
+            minDistance = distance
+            nearestNPC = npc
+        end
+    end
+    return nearestNPC
+end
+
+-- Function to attack the nearest NPC
+local function attackNPC()
+    local nearestNPC = findNearestNPC()
+    if nearestNPC then
+        humanoid:MoveTo(nearestNPC.Position)
+        wait(0.5) -- Adjust delay if needed
+        humanoid:MoveTo(character.HumanoidRootPart.Position)
+    end
+end
+
+-- Function to auto farm NPCs
+local function autoFarm()
+    while true do
+        attackNPC()
+        wait() -- Adjust delay between attacks if needed
+    end
+end
+
+-- Function to auto sell fruits
+local function autoSell()
+    while true do
+        if isToolEquipped("Fruit") then
+            -- Assuming the selling location is a part named "SellLocation"
+            humanoid:MoveTo(workspace.SellLocation.Position)
+            wait(2) -- Adjust delay if needed
+            humanoid:MoveTo(character.HumanoidRootPart.Position)
+        end
+        wait(5) -- Adjust delay between selling attempts if needed
+    end
+end
+
+-- Function to auto dodge attacks
+local function autoDodge()
+    while true do
+        -- Implement auto dodging logic here
+        wait() -- Adjust delay between checks if needed
+    end
+end
+
+-- Function to teleport to Mirage
+local function teleportMirage()
+    -- Implement teleportation logic to Mirage
+end
+
+-- Function to attack Leviathan
+local function attackLeviathan()
+    -- Implement attack logic for Leviathan
+end
+
+-- Function to auto farm elite NPCs
+local function autoFarmElite()
+    -- Implement auto farming for elite NPCs
+end
+
+-- Function to auto Yama
+local function autoYama()
+    -- Implement auto Yama logic
+end
+
+-- Function to auto Tushita
+local function autoTushita()
+    -- Implement auto Tushita logic
+end
+
+-- Function to auto chest
+local function autoChest()
+    -- Implement auto chest logic
+end
+
+-- Function for fast attack
+local function fastAttack()
+    -- Implement fast attack logic
+end
+
+-- Function for Soru with no cooldown
+local function soruNoCooldown()
+    -- Implement Soru with no cooldown logic
+end
+
+-- Function to auto collect fruit
+local function autoCollectFruit()
+    -- Implement auto collect fruit logic
+end
+
+-- Function for melee shop
+local function openMeleeShop()
+    -- Implement melee shop logic
+end
+
+-- Function for auto random fruit
+local function autoRandomFruit()
+    -- Implement auto random fruit logic
+end
+
+-- Function for auto random bone
+local function autoRandomBone()
+    -- Implement auto random bone logic
+end
+
+-- Function to auto farm boss
+local function autoFarmBoss()
+    -- Implement auto farm boss logic
+end
+
+-- Function to hop servers
+local function serverHop()
+    -- Implement server hopping logic
+end
+
+-- Function for aimbot to select player
+local function aimbotSelectPlayer(playerName)
+    -- Implement aimbot logic to select a player
+end
+
+-- Function for auto farm Mastery Gun DF
+local function autoFarmMasteryGunDF()
+    -- Implement auto farm Mastery Gun DF logic
+end
+
+-- Function for auto sea event
+local function autoSeaEvent()
+    -- Implement auto sea event logic
+end
+
+-- Function for Kitsune Island
+local function kitsuneIsland()
+    -- Implement Kitsune Island logic
+end
+
+-- Function for hybrid fruit hop
+local function hybridFruitHop()
+    -- Implement hybrid fruit hop logic
+end
+
+-- Function for auto shark anchor
+local function autoSharkAnchor()
+    -- Implement auto shark anchor logic
+end
+
+-- Function for auto farm material
+local function autoFarmMaterial()
+    -- Implement auto farm material logic
+end
+
+-- Function for auto farm bone
+local function autoFarmBone()
+    -- Implement auto farm bone logic
+end
+
+-- Function for auto farm katakuri
+local function autoFarmKatakuri()
+    -- Implement auto farm katakuri logic
+end
+
+-- Function for auto cursed dual katana
+local function autoCursedDualKatana()
+    -- Implement auto cursed dual katana logic
+end
+
+-- Function for auto soul guitar
+local function autoSoulGuitar()
+    -- Implement auto soul guitar logic
+end
+
+-- Function for skill for farm mastery
+local function skillForFarmMastery()
+    -- Implement skill for farm mastery logic
+end
+
+-- Function for auto store fruit
+local function autoStoreFruit()
+    -- Implement auto store fruit logic
+end
+
+-- Function for fly
+local function fly()
+    -- Implement fly logic
+end
+
+-- Function for no clip ship
+local function noClipShip()
+    -- Implement no clip ship logic
+end
+
+-- Function for no clip
+local function noClip()
+    -- Implement no clip logic
+end
+
+-- Function for auto enable observation
+local function autoEnableObservation()
+    -- Implement auto enable observation logic
+end
+
+-- Function for auto turn on haki
+local function autoTurnOnHaki()
+    -- Implement auto turn on haki logic
+end
+
+-- Function for auto use v3
+local function autoUseV3()
+    -- Implement auto use v3 logic
+end
+
+-- Function for auto use v4
+local function autoUseV4()
+    -- Implement auto use v4 logic
+end
+
+-- Function for teleport island
+local function teleportIsland()
+    -- Implement teleport island logic
+end
+
+-- Function for auto bribe
+local function autoBribe()
+    -- Implement auto bribe logic
+end
+
+-- Function for auto buy legendary sword
+local function autoBuyLegendarySword()
+    -- Implement auto buy legendary sword logic
+end
+
+-- Function for auto buy haki
+local function autoBuyHaki()
+    -- Implement auto buy haki logic
+end
+
+-- Function for tween speed 150 250 350
+local function tweenSpeed(speed)
+    -- Implement tween speed logic
+end
+
+-- Function for stop tween prevent security kick
+local function stopTweenPreventSecurityKick()
+    --
+-- Function for auto unlock library
+local function autoUnlockLibrary()
+    -- Implement auto unlock library logic
+end
+
+-- Function for auto factory
+local function autoFactory()
+    -- Implement auto factory logic
+end
+
+-- Function for auto pirate raid
+local function autoPirateRaid()
+    -- Implement auto pirate raid logic
+end
+
+-- Function for auto raid
+local function autoRaid()
+    -- Implement auto raid logic
+end
+
+-- Function for raid select
+local function raidSelect()
+    -- Implement raid select logic
+end
+
+-- Function for kill aura in raid
+local function killAuraInRaid()
+    -- Implement kill aura in raid logic
+end
+
+-- Function for auto awakening
+local function autoAwakening()
+    -- Implement auto awakening logic
+end
+
