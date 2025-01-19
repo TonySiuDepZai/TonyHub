@@ -22,7 +22,7 @@ local ConfigurationExtension = ".rfld"
 local settingsTable = {
 	General = {
 		-- if needs be in order just make getSetting(name)
-		TonyHubOpen = {Type = 'bind', Value = 'T', Name = 'Tony Hub Keybind'},
+		TonyHubOpen = {Type = 'bind', Value = 'K', Name = 'TonyHub Keybind'},
 		-- buildwarnings
 		-- TonyHubprompts
 
@@ -117,7 +117,7 @@ end
 --	local fileFunctionsAvailable = isfile and writefile and readfile
 
 --	if not fileFunctionsAvailable and not useStudio then
---		warn('TonyHubInterface Suite | Sirius Analytics:\n\n\nAs you don\'t have file functionality with your executor, we are unable to save whether you want to opt in or out to analytics.\nIf you do not want to take part in anonymised usage statistics, let us know in our Discord at sirius.menu/discord and we will manually opt you out.')
+--		warn('TonyHub Interface Suite | Sirius Analytics:\n\n\nAs you don\'t have file functionality with your executor, we are unable to save whether you want to opt in or out to analytics.\nIf you do not want to take part in anonymised usage statistics, let us know in our Discord at sirius.menu/discord and we will manually opt you out.')
 --		analytics = true	
 --	else
 --		prompt.create(
@@ -650,7 +650,7 @@ TonyHub.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
 
 
-local Icons = useStudio and require(script.Parent.icons) or loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/refs/heads/main/icons.lua'))()
+local Icons = useStudio and require(script.Parent.icons) or loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/TonyHub/refs/heads/main/icons.lua'))()
 
 -- Variables
 
@@ -1082,7 +1082,7 @@ local function Hide(notify: boolean?)
 	Debounce = true
 	if notify then
 		if useMobilePrompt then 
-			TonyHubLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping 'Show Tony Hub'.", Duration = 7, Image = 4400697855})
+			TonyHubLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping 'Show TonyHub'.", Duration = 7, Image = 4400697855})
 		else
 			TonyHubLibrary:Notify({Title = "Interface Hidden", Content = `The interface has been hidden, you can unhide the interface by tapping {settingsTable.General.TonyHubOpen.Value or 'K'}.`, Duration = 7, Image = 4400697855})
 		end
@@ -3626,7 +3626,7 @@ if useStudio then
 		LoadingTitle = "TonyHub Interface Suite",
 		Theme = 'Default',
 		Icon = 0,
-		LoadingSubtitle = "by Tony Hub",
+		LoadingSubtitle = "by Sirius",
 		ConfigurationSaving = {
 			Enabled = true,
 			FolderName = nil, -- Create a custom folder for your hub/game
@@ -3691,7 +3691,7 @@ if useStudio then
 	})
 
 
-	--TonyHubLibrary:Notify({Title = "Tony Hub Interface", Content = "Welcome to Tony Hub. These - are the brand new notification design for Tony Hub, with custom sizing and Tony Hub calculated wait times.", Image = 4483362458})
+	--TonyHubLibrary:Notify({Title = "TonyHub Interface", Content = "Welcome to TonyHub. These - are the brand new notification design for TonyHub, with custom sizing and TonyHub calculated wait times.", Image = 4483362458})
 
 	local Section = Tab:CreateSection("Section Example")
 
